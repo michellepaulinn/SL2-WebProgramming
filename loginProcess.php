@@ -9,14 +9,19 @@
         $msg = "";
         $data = mysqli_fetch_array($query);
 
-        if(!$query){
+        if($data==""){
             $msg = "Akun anda belum terdaftar, silahkan Register terlebih dahulu.";
             alert($msg);
         }else if( $password != $data['password'] ){
             $msg = "Password invalid, silahkan coba lagi.";
             alert($msg);
         }else{
-            header("location:home.php?id=".$data['username']."");
+            echo "<script>";
+                echo "alert('Login Berhasil!')";
+            echo "</script>";
+            echo "<script>";
+                echo "window.location='home.php?id=".$data['username']."'";
+            echo "</script>";
         }
 
     }
