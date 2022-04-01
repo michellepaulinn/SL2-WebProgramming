@@ -96,7 +96,12 @@
             $query = mysqli_query($connection, $str_query);
             
 
-            header("location:welcome.php");
+            echo "<script>";
+                echo "alert('Register Berhasil!')";
+            echo "</script>";
+            echo "<script>";
+                echo "window.location='welcome.php'";
+            echo "</script>";
         }
     }
 
